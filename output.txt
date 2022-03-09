@@ -1,0 +1,63 @@
+
+The amount of observations that the Public Principal Data has is: 8524
+The amount of variables that the Public Principad Data has is: 473
+The Control Numbers for the Public Principal Data is "CNTLNUM" which is the Principal Control Number and "SCHCNTL" which is the School Control Number.
+
+The amount of Observations that the Public Teacher Data has is 42086
+The amount of Variables that the Public Teacher Data has is 1335
+The Control Numbers for the Public Teacher Data is "CNTLNUM" which is the Teacher Control Number and "SCHCNTL" which is the School Control Number.    
+
+Question 4: How many public school principals are there? How many of them are male versus female principals?
+The number of public school principals are 8524
+The number of male principals are 5481
+The number of female principals are 3043
+
+Question 5: How many of them are White, Black, Asian, and Hispanic principals?
+The number of American Indian Principals are 144
+The number of Asian Principals are 99
+The number of Black Principals are 826
+The number of White Principals are 7107
+The number of Hispanic Principals are 348
+
+Question 6: What is the age distribution for these principals?
+The number of principals that are under forty years old are 865
+The number of principals that are between 40 and 44 years old are 1040
+The number of principals that are between 45 to 49 years old are 2043
+The number of principals that are between 50 to 54 years old are 2784
+The number of principals that are over 55 years old are 1792
+
+Question 7: What school levels are these principals worked at? Say elementary, middle, or high school.
+The amount of elementary principals are 4138
+The amount of secondary school principals are 3602
+The amount of combined school principals are 784
+
+Question 8: Provide a frequency distribution of the schools minority student enrollment.
+Fewer than 5 percent students: 2179
+5 - 19 percent students: 2216
+20 - 49 percent students: 1873
+50 or more percent students: 2223
+Not available because school was a noninterview: 33
+            MINENR
+count  8491.000000
+mean      2.487575
+std       1.134398
+min       1.000000
+25%       1.000000
+50%       2.000000
+75%       4.000000
+max       4.000000
+
+Question 9: Before the merge, provide the number of observations in each file for public principal and public school data.
+Before the merge, the number of obersvations in the Public Principal Data is 8524
+Before the merge, the number of observations in the Public Teacher Data is 42086
+
+Question 10: After the merge, provide the number of observations that correctly merged. How many of these observations failed to merge? Explain what the cause of failure may be to merge
+The amount of observations that correctly merged is 29100
+The amount of observations that failed to merge is 21510
+
+There are many reasons that some observations failed to merge. Such as...
+ * There are some variables that do not corrisond or left blank on their control numbers
+ * Some of the schools are probably closed.
+ * Some teachers volunteered their responses while there principals they worked in did not.
+ * Some teachers and principals worked at multiple schools.
+ * Or even some schools closed
