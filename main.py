@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 # Dataframe
 df1 = pd.read_csv('source\datasets\SASS_99_00_S2a_v1_0.csv', low_memory=False) # Public Principle --S2A
 df2 = pd.read_csv('source\datasets\SASS_99_00_S4a_v1_0.csv', low_memory=False) # Public Teacher -- S4A
-
+df3 = pd.read_csv('source\datasets\SASS_99_00_S3a_v1_0.csv', low_memory=False) # Public School -- S3A
 
 def dataDescription():
     # Public Principal Variables and Observations
@@ -115,17 +115,17 @@ def dataProcessing():
 def dataMerge():
     # Question 9 
     public_principal_oberservation = df1.shape[0]
-    public_teacher_observations = df2.shape[0]
+    public_school_observations = df3.shape[0]
     print('Question 9: Before the merge, provide the number of observations in each file for public principal and public school data.')
     print(f'Before the merge, the number of obersvations in the Public Principal Data is {public_principal_oberservation}')
-    print(f'Before the merge, the number of observations in the Public Teacher Data is {public_teacher_observations}')
+    print(f'Before the merge, the number of observations in the Public School Data is {public_school_observations}')
     print()
     # Question 10 
-    merging_datasets = pd.merge(df1, df2, left_on="CNTLNUM", right_on="SCHCNTL")
+    merging_datasets = pd.merge(df1, df3, on="SCHCNTL")
     merging_datasets.to_csv('source\datasets\datamerge.csv')
-    df3 = pd.read_csv('source\datasets\datamerge.csv', low_memory=False)
-    merge_observations = df3.shape[0]
-    incorrectly_merged = (public_principal_oberservation + public_teacher_observations - merge_observations)
+    df4 = pd.read_csv('source\datasets\datamerge.csv', low_memory=False)
+    merge_observations = df4.shape[0]
+    incorrectly_merged = (public_principal_oberservation + public_school_observations - merge_observations)
     print('Question 10: After the merge, provide the number of observations that correctly merged. How many of these observations failed to merge? Explain what the cause of failure may be to merge')
     print(f'The amount of observations that correctly merged is {merge_observations}')
     print(f'The amount of observations that failed to merge is {incorrectly_merged}')
@@ -140,6 +140,10 @@ def dataMerge():
 dataDescription()
 dataProcessing()
 dataMerge()
+
+
+# These are wrong below. I thought we are merging the public principal with public teachers. Discard the last bit of the video. 
+
 
 # pandas data merge left_on="CNTLNUM"', right_on="SCHCNTL" gives 29100 correctly merged observations
 # pandas data merge on="CNTLNUM" gives 7273 correctly merged observations
